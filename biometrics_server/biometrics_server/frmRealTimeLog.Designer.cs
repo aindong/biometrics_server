@@ -79,6 +79,7 @@
             this.txt_Port.Name = "txt_Port";
             this.txt_Port.Size = new System.Drawing.Size(117, 23);
             this.txt_Port.TabIndex = 3;
+            this.txt_Port.Text = "5005";
             // 
             // btnConnect
             // 
@@ -92,6 +93,7 @@
             this.btnConnect.Text = "Listen";
             this.btnConnect.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
             // listView1
             // 
