@@ -47,6 +47,7 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +72,6 @@
             // 
             // lstAttendance
             // 
-            this.lstAttendance.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.lstAttendance.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader4,
             this.columnHeader1,
@@ -180,9 +180,9 @@
             this.columnHeader5});
             this.lstEmployee.FullRowSelect = true;
             this.lstEmployee.GridLines = true;
-            this.lstEmployee.Location = new System.Drawing.Point(14, 73);
+            this.lstEmployee.Location = new System.Drawing.Point(14, 101);
             this.lstEmployee.Name = "lstEmployee";
-            this.lstEmployee.Size = new System.Drawing.Size(226, 330);
+            this.lstEmployee.Size = new System.Drawing.Size(226, 302);
             this.lstEmployee.TabIndex = 23;
             this.lstEmployee.UseCompatibleStateImageBehavior = false;
             this.lstEmployee.View = System.Windows.Forms.View.Details;
@@ -224,11 +224,22 @@
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(12, 73);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(181, 15);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "Double Click to View Attendance";
+            // 
             // frmAttendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 414);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.lstEmployee);
             this.Controls.Add(this.label6);
@@ -276,5 +287,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Label label5;
     }
 }

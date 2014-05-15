@@ -30,6 +30,7 @@ namespace biometrics_server
         private void frmAttendance_Load(object sender, EventArgs e)
         {
             AttendanceModel.loadRecord(ref lstAttendance, ref lstEmployee);
+            AttendanceModel.loadEmployee(ref lstEmployee);
         }
 
         private void label2_Click(object sender, EventArgs e)
