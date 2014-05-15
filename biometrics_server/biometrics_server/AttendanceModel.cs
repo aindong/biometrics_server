@@ -19,8 +19,7 @@ namespace biometrics_server
                 using (MySqlConnection con = new MySqlConnection(biometrics_server.Config.getConnectionString()))
                 {
                     con.Open();
-
-                    string sql = "SELECT * FROM attendance INNER JOIN user ON user_id = attendance_id WHERE user_active = 1 WHERE attendace_id = @id";
+                    string sql = "SELECT * FROM attendance INNER JOIN user ON user_id = attendance_id WHERE user_active = 1 AND WHERE attendance_employee = @id";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
                     cmd.Parameters.AddWithValue("id", id);
@@ -39,7 +38,7 @@ namespace biometrics_server
             }
             catch (MySqlException ex)
             {
-
+                MessageBox.Show("error" + ex.ToString(), "error");
             }
         }
         

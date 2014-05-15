@@ -49,7 +49,7 @@ namespace biometrics_server
 
         private void lstEmployee_DoubleClick(object sender, EventArgs e)
         {
-
+            AttendanceModel.searchUser(ref lstAttendance, lstEmployee.SelectedItems[0].Text);
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
