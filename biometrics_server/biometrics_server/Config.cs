@@ -13,8 +13,11 @@ namespace biometrics_server
         public static string DB_User;
         public static string DB_Pass;
 
-        public static string ConnectionString = string.Format("Server={0};Database={1};Uid={2};Pwd={3};", DB_Host, DB_Name, DB_User, DB_Pass);
-
+        //will return the connection string
+        public static string getConnectionString()
+        {
+            return string.Format("Server={0};Database={1};Uid={2};Pwd={3};", DB_Host, DB_Name, DB_User, DB_Pass);
+        }
 
     }
 }
