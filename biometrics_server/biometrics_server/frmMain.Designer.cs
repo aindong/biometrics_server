@@ -122,6 +122,7 @@
             this.btn_DBConfig.TabIndex = 7;
             this.btn_DBConfig.Text = "Database\r\nConfig";
             this.btn_DBConfig.UseVisualStyleBackColor = true;
+            this.btn_DBConfig.Click += new System.EventHandler(this.btn_DBConfig_Click);
             // 
             // button1
             // 
@@ -152,7 +153,7 @@
             // 
             // frmMain
             // 
-            this.ClientSize = new System.Drawing.Size(485, 328);
+            this.ClientSize = new System.Drawing.Size(465, 328);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
