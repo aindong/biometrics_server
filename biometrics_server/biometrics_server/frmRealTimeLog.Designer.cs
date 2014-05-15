@@ -33,6 +33,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txt_Port = new System.Windows.Forms.TextBox();
             this.btnConnect = new System.Windows.Forms.Button();
+            this.listRealTimeLog = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +66,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 69);
+            this.label2.Location = new System.Drawing.Point(12, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 15);
             this.label2.TabIndex = 2;
@@ -68,7 +75,7 @@
             // txt_Port
             // 
             this.txt_Port.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Port.Location = new System.Drawing.Point(53, 61);
+            this.txt_Port.Location = new System.Drawing.Point(53, 78);
             this.txt_Port.Name = "txt_Port";
             this.txt_Port.Size = new System.Drawing.Size(117, 23);
             this.txt_Port.TabIndex = 3;
@@ -77,20 +84,69 @@
             // 
             this.btnConnect.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnect.Image = global::biometrics_server.Properties.Resources.Forward;
-            this.btnConnect.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnConnect.Location = new System.Drawing.Point(176, 61);
+            this.btnConnect.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnConnect.Location = new System.Drawing.Point(176, 57);
             this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(79, 57);
+            this.btnConnect.Size = new System.Drawing.Size(81, 46);
             this.btnConnect.TabIndex = 4;
             this.btnConnect.Text = "Listen";
-            this.btnConnect.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnConnect.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConnect.UseVisualStyleBackColor = true;
+            // 
+            // listRealTimeLog
+            // 
+            this.listRealTimeLog.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6});
+            this.listRealTimeLog.FullRowSelect = true;
+            this.listRealTimeLog.GridLines = true;
+            this.listRealTimeLog.Location = new System.Drawing.Point(15, 109);
+            this.listRealTimeLog.Name = "listRealTimeLog";
+            this.listRealTimeLog.Size = new System.Drawing.Size(690, 257);
+            this.listRealTimeLog.TabIndex = 5;
+            this.listRealTimeLog.UseCompatibleStateImageBehavior = false;
+            this.listRealTimeLog.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "SN";
+            this.columnHeader1.Width = 59;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Device Number";
+            this.columnHeader2.Width = 101;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "User ID";
+            this.columnHeader3.Width = 121;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Name ";
+            this.columnHeader4.Width = 172;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Date ";
+            this.columnHeader5.Width = 115;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Time";
+            this.columnHeader6.Width = 113;
             // 
             // frmRealTimeLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 261);
+            this.ClientSize = new System.Drawing.Size(713, 387);
+            this.Controls.Add(this.listRealTimeLog);
             this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.txt_Port);
             this.Controls.Add(this.label2);
@@ -114,5 +170,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_Port;
         private System.Windows.Forms.Button btnConnect;
+        private System.Windows.Forms.ListView listRealTimeLog;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
     }
 }

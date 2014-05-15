@@ -82,5 +82,11 @@ namespace biometrics_server
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            frmRealTimeLog frm = new frmRealTimeLog();
+            frm.ShowDialog();
+        }
     }
 }
