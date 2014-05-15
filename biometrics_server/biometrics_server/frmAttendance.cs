@@ -27,6 +27,11 @@ namespace biometrics_server
 
         }
 
+        private void frmAttendance_Load(object sender, EventArgs e)
+        {
+
+        }
+
         
     }
 }
