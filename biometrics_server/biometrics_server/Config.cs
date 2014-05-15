@@ -8,10 +8,10 @@ namespace biometrics_server
 {
     class Config
     {
-        public static string DB_Host;
-        public static string DB_Name;
-        public static string DB_User;
-        public static string DB_Pass;
+        public static string DB_Host = Properties.Settings.Default.DB_Host;
+        public static string DB_Name = Properties.Settings.Default.DB_Name;
+        public static string DB_User = Properties.Settings.Default.DB_User;
+        public static string DB_Pass = Properties.Settings.Default.DB_Pass;
 
         public static void saveSettings()
         {
