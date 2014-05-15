@@ -39,31 +39,37 @@ namespace biometrics_server
         {
             try
             {
+                
                 device = new Device();
                 device.DN = (int)1;
                 device.Password = "0";
                 device.Model = "ZDC2911";
                 device.ConnectionModel = 5;//等于5时才能正确加载ZD2911通讯模块
 
-                //ip address
-                if (string.IsNullOrEmpty(txt_IP.Text.Trim()))
-                {
-                    MessageBox.Show("Please Input IP Address", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txt_IP.Focus();
-                    return;
+                if(rdb_Network.Checked == true){
+                    //ip address
+                    if (string.IsNullOrEmpty(txt_IP.Text.Trim()))
+                    {
+                        MessageBox.Show("Please Input IP Address", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txt_IP.Focus();
+                        return;
+                    }
+
+                    if (false == ConvertObject.IsCorrenctIP(txt_IP.Text.Trim()))
+                    {
+                        MessageBox.Show("Illegal IP Address", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txt_IP.Focus();
+                        return;
+                    }
+
+                    device.IpAddress = txt_IP.Text.Trim();
+                    device.IpPort = int.Parse(txt_Port.Text);
+                    device.CommunicationType = CommunicationType.Tcp;
+
+                }else{
+                    device.CommunicationType = CommunicationType.Usb;
                 }
-
-                if (false == ConvertObject.IsCorrenctIP(txt_IP.Text.Trim()))
-                {
-                    MessageBox.Show("Illegal IP Address", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txt_IP.Focus();
-                    return;
-                }
-
-                device.IpAddress = txt_IP.Text.Trim();
-                device.IpPort = int.Parse(txt_Port.Text);
-                device.CommunicationType = CommunicationType.Tcp;
-
+               
                 deviceConnection = DeviceConnection.CreateConnection(ref device);
                 if (deviceConnection.Open() > 0)
                 {
