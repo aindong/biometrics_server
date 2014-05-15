@@ -41,6 +41,7 @@
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,6 +77,7 @@
             this.listAttendance.Location = new System.Drawing.Point(12, 145);
             this.listAttendance.Name = "listAttendance";
             this.listAttendance.Size = new System.Drawing.Size(694, 255);
+            this.listAttendance.Size = new System.Drawing.Size(424, 255);
             this.listAttendance.TabIndex = 11;
             this.listAttendance.UseCompatibleStateImageBehavior = false;
             this.listAttendance.View = System.Windows.Forms.View.Details;
@@ -118,6 +120,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(24, 107);
+            this.label2.Location = new System.Drawing.Point(204, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 15);
             this.label2.TabIndex = 15;
@@ -157,6 +160,15 @@
             this.btnSearch.TabIndex = 19;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.label2.Text = "Date";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(242, 81);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(196, 23);
+            this.dateTimePicker1.TabIndex = 16;
             // 
             // frmAttendance
             // 
@@ -167,6 +179,8 @@
             this.Controls.Add(this.dtpEnd);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dtpStart);
+            this.ClientSize = new System.Drawing.Size(722, 407);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
@@ -201,5 +215,6 @@
         private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
