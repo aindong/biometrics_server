@@ -27,15 +27,11 @@ namespace biometrics_server
                     lst.Items.Clear();
                     while(reader.Read())
                     {
-                        lst.Items.Add(reader[0].ToString());
+                        lst.Items.Add(reader["attendance_employee"].ToString());
 
-                        lst.Items[lst.Items.Count - 1].SubItems.Add(reader[1].ToString());
-                        lst.Items[lst.Items.Count - 1].SubItems.Add(reader[2].ToString());
-                        lst.Items[lst.Items.Count - 1].SubItems.Add(reader[3].ToString());
-                        lst.Items[lst.Items.Count - 1].SubItems.Add(reader[4].ToString());
-                        lst.Items[lst.Items.Count - 1].SubItems.Add(reader[5].ToString());
-                        lst.Items[lst.Items.Count - 1].SubItems.Add(reader[6].ToString());
-                        lst.Items[lst.Items.Count - 1].SubItems.Add(reader[7].ToString());
+                        lst.Items[lst.Items.Count - 1].SubItems.Add(reader["attendance_active"].ToString());
+                        lst.Items[lst.Items.Count - 1].SubItems.Add(reader["attendance_date"].ToString());
+                        lst.Items[lst.Items.Count - 1].SubItems.Add(reader["attendance_date"].ToString());
                     }
 
                 }

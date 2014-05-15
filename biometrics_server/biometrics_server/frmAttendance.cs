@@ -27,11 +27,12 @@ namespace biometrics_server
 
         }
 
-<<<<<<< HEAD
         private void frmAttendance_Load(object sender, EventArgs e)
-=======
+        {
+            AttendanceModel.loadRecord(ref lstAttendance);
+        }
+
         private void label2_Click(object sender, EventArgs e)
->>>>>>> 69cef9803ec88d6dddbad1415a43742ceedcdaee
         {
 
         }

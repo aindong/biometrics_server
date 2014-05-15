@@ -122,6 +122,7 @@
     <Content Include="Data\C#\Riss.Devices.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\search.png" />
     <None Include="Resources\save.png" />
     <None Include="Resources\Calendar.png" />
     <None Include="Resources\Wrong.png" />

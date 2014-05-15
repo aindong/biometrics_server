@@ -30,7 +30,8 @@
         {
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.listAttendance = new System.Windows.Forms.ListView();
+            this.lstAttendance = new System.Windows.Forms.ListView();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -63,27 +64,33 @@
             this.panel2.Size = new System.Drawing.Size(694, 45);
             this.panel2.TabIndex = 10;
             // 
-            // listAttendance
+            // lstAttendance
             // 
-            this.listAttendance.Activation = System.Windows.Forms.ItemActivation.OneClick;
-            this.listAttendance.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstAttendance.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.lstAttendance.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader4,
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
-            this.listAttendance.FullRowSelect = true;
-            this.listAttendance.GridLines = true;
-            this.listAttendance.HoverSelection = true;
-            this.listAttendance.Location = new System.Drawing.Point(12, 145);
-            this.listAttendance.Name = "listAttendance";
-            this.listAttendance.Size = new System.Drawing.Size(696, 255);
-            this.listAttendance.TabIndex = 11;
-            this.listAttendance.UseCompatibleStateImageBehavior = false;
-            this.listAttendance.View = System.Windows.Forms.View.Details;
+            this.lstAttendance.FullRowSelect = true;
+            this.lstAttendance.GridLines = true;
+            this.lstAttendance.HoverSelection = true;
+            this.lstAttendance.Location = new System.Drawing.Point(23, 149);
+            this.lstAttendance.Name = "lstAttendance";
+            this.lstAttendance.Size = new System.Drawing.Size(685, 255);
+            this.lstAttendance.TabIndex = 11;
+            this.lstAttendance.UseCompatibleStateImageBehavior = false;
+            this.lstAttendance.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Employee Number";
+            this.columnHeader4.Width = 160;
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Employee Name";
-            this.columnHeader1.Width = 358;
+            this.columnHeader1.Width = 170;
             // 
             // columnHeader2
             // 
@@ -152,18 +159,21 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(473, 85);
+            this.btnSearch.Image = global::biometrics_server.Properties.Resources.search;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSearch.Location = new System.Drawing.Point(443, 70);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(118, 42);
+            this.btnSearch.Size = new System.Drawing.Size(103, 62);
             this.btnSearch.TabIndex = 19;
             this.btnSearch.Text = "Search";
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // frmAttendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(722, 407);
+            this.ClientSize = new System.Drawing.Size(722, 415);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.dtpEnd);
             this.Controls.Add(this.label3);
@@ -171,7 +181,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listAttendance);
+            this.Controls.Add(this.lstAttendance);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -191,7 +201,7 @@
 
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
-        public System.Windows.Forms.ListView listAttendance;
+        public System.Windows.Forms.ListView lstAttendance;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -202,5 +212,6 @@
         private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

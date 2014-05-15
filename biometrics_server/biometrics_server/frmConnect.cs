@@ -59,12 +59,6 @@ namespace biometrics_server
                 }
                 else
                 {
-                    if (txtPassword.Text == "")
-                    {
-                        return false;
-                    }
-                    else
-                    {
                         if (txtUser.Text == "")
                         {
                             return false;
@@ -73,9 +67,14 @@ namespace biometrics_server
                         {
                             return true;
                         }
-                    }
+                    
                 }
             }
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
     }
