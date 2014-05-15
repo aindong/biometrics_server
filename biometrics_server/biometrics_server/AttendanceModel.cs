@@ -19,7 +19,7 @@ namespace biometrics_server
                 {
                     con.Open();
 
-                    string sql = "SELECT * FROM attendance";
+                    string sql = "SELECT * FROM attendance INNER JOIN user ON user_id = attendance_id";
                     MySqlCommand cmd = new MySqlCommand(sql, con);
 
                     MySqlDataReader reader = cmd.ExecuteReader();
@@ -29,7 +29,7 @@ namespace biometrics_server
                     {
                         lst.Items.Add(reader["attendance_employee"].ToString());
 
-                        lst.Items[lst.Items.Count - 1].SubItems.Add(reader["attendance_active"].ToString());
+                        lst.Items[lst.Items.Count - 1].SubItems.Add(reader["user_slug"].ToString());
                         lst.Items[lst.Items.Count - 1].SubItems.Add(reader["attendance_date"].ToString());
                         lst.Items[lst.Items.Count - 1].SubItems.Add(reader["attendance_date"].ToString());
                     }
