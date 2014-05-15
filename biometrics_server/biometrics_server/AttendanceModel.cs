@@ -20,7 +20,7 @@ namespace biometrics_server
                 {
                     con.Open();
 
-                    string sql = "SELECT * FROM attendance INNER JOIN user ON user_id = attendance_id";
+                    string sql = "SELECT * FROM attendance INNER JOIN user ON user_id = attendance_id WHERE user_active = 1";
                     MySqlCommand cmd = new MySqlCommand(sql, con);
 
                     MySqlDataReader reader = cmd.ExecuteReader();
