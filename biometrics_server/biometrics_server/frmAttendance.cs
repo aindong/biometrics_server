@@ -57,6 +57,11 @@ namespace biometrics_server
         {
             AttendanceModel.loadRecord(ref lstAttendance, ref lstEmployee);
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            AttendanceModel.loadRecordWithFilter( ref lstAttendance, dtpStart.Value, dtpEnd.Value, lstAttendance.SelectedItems[0].Text);
+        }
         
 
         

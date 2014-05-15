@@ -38,7 +38,7 @@ namespace biometrics_server
         
 
    
-        //load records
+       //search user using double click
         public static void searchUser(ref ListView lst, String id)
         {
             try
@@ -68,7 +68,8 @@ namespace biometrics_server
                 MessageBox.Show("error" + ex.ToString(), "error");
             }
         }
-        
+
+        //load records
         public static void loadRecord(ref ListView lst, ref ListView lstEmp)
         {
             try
@@ -114,11 +115,11 @@ namespace biometrics_server
 
                     if(empID == "")
                     {
-                        sql = "SELECT * FROM attendance WHERE attendance_date BETWEEN @start AND @end";
+                        sql = "SELECT * FROM attendance INNER JOIN user ON user_id = attendance_employee WHERE user_active = 1 AND attendance_date BETWEEN @start AND @end";
                     }
                     else
                     {
-                        sql = "SELECT * FROM attendance WHERE attendance_employee = @empID attendance_date BETWEEN @start AND @end";
+                        sql = "SELECT * FROM attendance INNER JOIN user ON user_id = attendance_employee WHERE user_active = 1 AND attendance_employee = @empID attendance_date BETWEEN @start AND @end";
                     }
                     
                     MySqlCommand cmd = new MySqlCommand(sql, con);
@@ -136,15 +137,12 @@ namespace biometrics_server
                     lst.Items.Clear();
                     while (reader.Read())
                     {
-                        lst.Items.Add(reader[0].ToString());
-
-                        lst.Items[lst.Items.Count - 1].SubItems.Add(reader[1].ToString());
-                        lst.Items[lst.Items.Count - 1].SubItems.Add(reader[2].ToString());
-                        lst.Items[lst.Items.Count - 1].SubItems.Add(reader[3].ToString());
-                        lst.Items[lst.Items.Count - 1].SubItems.Add(reader[4].ToString());
-                        lst.Items[lst.Items.Count - 1].SubItems.Add(reader[5].ToString());
-                        lst.Items[lst.Items.Count - 1].SubItems.Add(reader[6].ToString());
-                        lst.Items[lst.Items.Count - 1].SubItems.Add(reader[7].ToString());
+                        lst.Items.Add(reader["attendance_employee"].ToString());
+                        DateTime aDate;
+                        DateTime.TryParse(reader["attendance_date"].ToString(), out aDate);
+                        lst.Items[lst.Items.Count - 1].SubItems.Add(reader["user_name"].ToString());
+                        lst.Items[lst.Items.Count - 1].SubItems.Add(aDate.ToString("MMMM dd, yyyy"));
+                        lst.Items[lst.Items.Count - 1].SubItems.Add(aDate.ToString("hh:mm:ss tt"));
                     }
 
                 }
