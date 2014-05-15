@@ -51,16 +51,19 @@ namespace biometrics_server
         private void lstEmployee_DoubleClick(object sender, EventArgs e)
         {
             AttendanceModel.searchUser(ref lstAttendance, lstEmployee.SelectedItems[0].Text);
+            textBox1.Text = lstEmployee.SelectedItems[0].Text;
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             AttendanceModel.loadRecord(ref lstAttendance, ref lstEmployee);
+            
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            AttendanceModel.loadRecordWithFilter( ref lstAttendance, dtpStart.Value, dtpEnd.Value, lstAttendance.SelectedItems[0].Text);
+            AttendanceModel.loadRecordWithFilter(ref lstAttendance, dtpStart.Value.ToString("yyyy-MM-d"), dtpEnd.Value.ToString("yyyy-MM-d"), textBox1.Text);
+            
         }
         
 

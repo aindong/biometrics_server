@@ -103,7 +103,7 @@ namespace biometrics_server
         }
 
         //load record by date
-        public static void loadRecordWithFilter(ref ListView lst, DateTime start, DateTime end, string empID = "")
+        public static void loadRecordWithFilter(ref ListView lst, string start, string end, string empID)
         {
             try
             {
@@ -119,7 +119,7 @@ namespace biometrics_server
                     }
                     else
                     {
-                        sql = "SELECT * FROM attendance INNER JOIN user ON user_id = attendance_employee WHERE user_active = 1 AND attendance_employee = @empID attendance_date BETWEEN @start AND @end";
+                        sql = "SELECT * FROM attendance INNER JOIN user ON user_id = attendance_employee WHERE user_active = 1 AND attendance_employee = @empID AND attendance_date BETWEEN @start AND @end";
                     }
                     
                     MySqlCommand cmd = new MySqlCommand(sql, con);
@@ -145,11 +145,13 @@ namespace biometrics_server
                         lst.Items[lst.Items.Count - 1].SubItems.Add(aDate.ToString("hh:mm:ss tt"));
                     }
 
+                   // MessageBox.Show(start);
+
                 }
             }
             catch (MySqlException ex)
             {
-
+                MessageBox.Show("Error: " + ex.Message.ToString());
             }
         }
 
