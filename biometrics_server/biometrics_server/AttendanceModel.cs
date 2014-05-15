@@ -11,6 +11,33 @@ namespace biometrics_server
 {
     class AttendanceModel
     {
+        //load employee
+        public static void loadEmployee(ref ListView lstEmp)
+        {
+            try{
+                using (MySqlConnection con = new MySqlConnection(biometrics_server.Config.getConnectionString()))
+                {
+                    con.Open();
+                    string sql = "SELECT * FROM user WHERE user_active = 1";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    lstEmp.Items.Clear();
+                    while (reader.Read())
+                    {
+                        lstEmp.Items.Add(reader["user_id"].ToString());
+                        lstEmp.Items[lstEmp.Items.Count - 1].SubItems.Add(reader["user_name"].ToString());
+                    }
+                }
+            }catch(MySqlException ex){
+
+            }
+           
+        }
+        
+
+   
         //load records
         public static void searchUser(ref ListView lst, String id)
         {
