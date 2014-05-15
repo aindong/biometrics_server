@@ -36,11 +36,11 @@
             this.txt_Port = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnDisconnect = new System.Windows.Forms.Button();
             this.btnConnect = new System.Windows.Forms.Button();
             this.btn_ViewAttendance = new System.Windows.Forms.Button();
             this.btn_DBConfig = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -67,15 +67,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 84);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 15);
+            this.label2.Size = new System.Drawing.Size(69, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "IP Address :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(45, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 15);
@@ -114,6 +116,18 @@
             this.label4.Size = new System.Drawing.Size(65, 15);
             this.label4.TabIndex = 0;
             this.label4.Text = "Navigation";
+            // 
+            // button1
+            // 
+            this.button1.Image = global::biometrics_server.Properties.Resources.history;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(223, 228);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(109, 77);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Real Time Log";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // btnDisconnect
             // 
@@ -163,18 +177,6 @@
             this.btn_DBConfig.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_DBConfig.UseVisualStyleBackColor = true;
             this.btn_DBConfig.Click += new System.EventHandler(this.btn_DBConfig_Click);
-            // 
-            // button1
-            // 
-            this.button1.Image = global::biometrics_server.Properties.Resources.history;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(223, 228);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 77);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Real Time Log";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
