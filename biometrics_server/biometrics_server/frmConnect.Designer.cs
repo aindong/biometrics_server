@@ -49,7 +49,6 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(172, 23);
             this.txtName.TabIndex = 8;
-            this.txtName.Text = "openovate_operation";
             // 
             // txtHost
             // 
@@ -58,7 +57,6 @@
             this.txtHost.Name = "txtHost";
             this.txtHost.Size = new System.Drawing.Size(172, 23);
             this.txtHost.TabIndex = 7;
-            this.txtHost.Text = "localhost";
             // 
             // label3
             // 
@@ -117,7 +115,6 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(172, 23);
             this.txtUser.TabIndex = 12;
-            this.txtUser.Text = "root";
             // 
             // label1
             // 
@@ -174,6 +171,7 @@
             this.Name = "frmConnect";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Connection String";
+            this.Load += new System.EventHandler(this.frmConnect_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);

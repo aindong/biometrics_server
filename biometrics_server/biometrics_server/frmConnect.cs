@@ -78,5 +78,13 @@ namespace biometrics_server
 
         }
 
+        private void frmConnect_Load(object sender, EventArgs e)
+        {
+            txtHost.Text = Properties.Settings.Default.DB_Host;
+            txtName.Text = Properties.Settings.Default.DB_Name;
+            txtUser.Text = Properties.Settings.Default.DB_User;
+            txtPassword.Text = Properties.Settings.Default.DB_Pass;
+        }
+
     }
 }
