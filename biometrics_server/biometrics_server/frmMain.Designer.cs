@@ -135,6 +135,7 @@
             this.btnConnect.Text = "Connect to Device";
             this.btnConnect.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
             // btn_ViewAttendance
             // 

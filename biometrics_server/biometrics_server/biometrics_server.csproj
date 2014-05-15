@@ -67,7 +67,6 @@
     <Compile Include="frmConnect.Designer.cs">
       <DependentUpon>frmConnect.cs</DependentUpon>
     </Compile>
-    <Compile Include="Entity\DeviceCom.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
