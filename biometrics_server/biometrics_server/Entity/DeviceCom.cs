@@ -9,10 +9,10 @@ namespace biometrics_server.Entity
 {
     class DeviceCom
     {
-        public DeviceCom() { }
+        //public DeviceCom() { }
 
-        public DeviceConnection DeviceConnection() { get; set; }
+        //public DeviceConnection DeviceConnection() { get; set; }
 
-        public Device Device() { get; set; }
+        //public Device Device() { get; set; }
     }
 }
