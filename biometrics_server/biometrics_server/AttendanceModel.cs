@@ -12,7 +12,7 @@ namespace biometrics_server
     class AttendanceModel
     {
         //load records
-        public static void loadRecord(ref ListView lst)
+        public static void loadRecord(ref ListView lst, ref ListView lstEmp)
         {
             try
             {
@@ -28,10 +28,12 @@ namespace biometrics_server
                     lst.Items.Clear();
                     while(reader.Read())
                     {
+                        lstEmp.Items.Add(reader["attendance_employee"].ToString());
+                        lstEmp.Items[lstEmp.Items.Count - 1].SubItems.Add(reader["user_name"].ToString());
+
                         lst.Items.Add(reader["attendance_employee"].ToString());
                         DateTime aDate;
                         DateTime.TryParse(reader["attendance_date"].ToString(), out aDate);
-
                         lst.Items[lst.Items.Count - 1].SubItems.Add(reader["user_name"].ToString());
                         lst.Items[lst.Items.Count - 1].SubItems.Add(aDate.ToString("MMMM dd, yyyy"));
                         lst.Items[lst.Items.Count - 1].SubItems.Add(aDate.ToString("hh:mm:ss tt"));

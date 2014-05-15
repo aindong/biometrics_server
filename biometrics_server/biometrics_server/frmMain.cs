@@ -70,17 +70,28 @@ namespace biometrics_server
                     deviceEty = new DeviceComEty();
                     deviceEty.Device = device;
                     deviceEty.DeviceConnection = deviceConnection;
-                    
+                    btnDisconnect.Enabled = true;
                 }
                 else
                 {
-                    MessageBox.Show("Failed to Connect to Device", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Failed to Connect to Device", "System", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            frmRealTimeLog frmRtl = new frmRealTimeLog();
+            frmRtl.ShowDialog();
+        }
+
+        private void btnDisconnect_Click(object sender, EventArgs e)
+        {
+            deviceConnection.Close();
         }
     }
 }

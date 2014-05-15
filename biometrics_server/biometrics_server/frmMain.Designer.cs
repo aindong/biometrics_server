@@ -36,11 +36,11 @@
             this.txt_Port = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRealTimeLog = new System.Windows.Forms.Button();
             this.btnDisconnect = new System.Windows.Forms.Button();
             this.btnConnect = new System.Windows.Forms.Button();
-            this.btn_ViewAttendance = new System.Windows.Forms.Button();
-            this.btn_DBConfig = new System.Windows.Forms.Button();
+            this.btnViewAttendance = new System.Windows.Forms.Button();
+            this.btnDBConfig = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -68,7 +68,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 84);
+            this.label2.Location = new System.Drawing.Point(11, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 15);
             this.label2.TabIndex = 1;
@@ -78,7 +78,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(45, 117);
+            this.label3.Location = new System.Drawing.Point(45, 112);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 15);
             this.label3.TabIndex = 2;
@@ -117,20 +117,22 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Navigation";
             // 
-            // button1
+            // btnRealTimeLog
             // 
-            this.button1.Image = global::biometrics_server.Properties.Resources.history;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(223, 228);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 77);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Real Time Log";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnRealTimeLog.Image = global::biometrics_server.Properties.Resources.history;
+            this.btnRealTimeLog.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRealTimeLog.Location = new System.Drawing.Point(223, 228);
+            this.btnRealTimeLog.Name = "btnRealTimeLog";
+            this.btnRealTimeLog.Size = new System.Drawing.Size(109, 77);
+            this.btnRealTimeLog.TabIndex = 9;
+            this.btnRealTimeLog.Text = "Real Time Log";
+            this.btnRealTimeLog.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRealTimeLog.UseVisualStyleBackColor = true;
+            this.btnRealTimeLog.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // btnDisconnect
             // 
+            this.btnDisconnect.Enabled = false;
             this.btnDisconnect.Image = global::biometrics_server.Properties.Resources.Wrong;
             this.btnDisconnect.Location = new System.Drawing.Point(338, 67);
             this.btnDisconnect.Name = "btnDisconnect";
@@ -139,6 +141,7 @@
             this.btnDisconnect.Text = "Disconnect";
             this.btnDisconnect.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDisconnect.UseVisualStyleBackColor = true;
+            this.btnDisconnect.Click += new System.EventHandler(this.btnDisconnect_Click);
             // 
             // btnConnect
             // 
@@ -152,40 +155,40 @@
             this.btnConnect.UseVisualStyleBackColor = true;
             this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
-            // btn_ViewAttendance
+            // btnViewAttendance
             // 
-            this.btn_ViewAttendance.Image = global::biometrics_server.Properties.Resources.Calendar;
-            this.btn_ViewAttendance.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_ViewAttendance.Location = new System.Drawing.Point(338, 228);
-            this.btn_ViewAttendance.Name = "btn_ViewAttendance";
-            this.btn_ViewAttendance.Size = new System.Drawing.Size(109, 77);
-            this.btn_ViewAttendance.TabIndex = 8;
-            this.btn_ViewAttendance.Text = "View Attendance";
-            this.btn_ViewAttendance.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_ViewAttendance.UseVisualStyleBackColor = true;
-            this.btn_ViewAttendance.Click += new System.EventHandler(this.button1_Click);
+            this.btnViewAttendance.Image = global::biometrics_server.Properties.Resources.Calendar;
+            this.btnViewAttendance.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnViewAttendance.Location = new System.Drawing.Point(338, 228);
+            this.btnViewAttendance.Name = "btnViewAttendance";
+            this.btnViewAttendance.Size = new System.Drawing.Size(109, 77);
+            this.btnViewAttendance.TabIndex = 8;
+            this.btnViewAttendance.Text = "View Attendance";
+            this.btnViewAttendance.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnViewAttendance.UseVisualStyleBackColor = true;
+            this.btnViewAttendance.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btn_DBConfig
+            // btnDBConfig
             // 
-            this.btn_DBConfig.Image = global::biometrics_server.Properties.Resources.db1;
-            this.btn_DBConfig.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_DBConfig.Location = new System.Drawing.Point(15, 228);
-            this.btn_DBConfig.Name = "btn_DBConfig";
-            this.btn_DBConfig.Size = new System.Drawing.Size(109, 77);
-            this.btn_DBConfig.TabIndex = 7;
-            this.btn_DBConfig.Text = "Database Config";
-            this.btn_DBConfig.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_DBConfig.UseVisualStyleBackColor = true;
-            this.btn_DBConfig.Click += new System.EventHandler(this.btn_DBConfig_Click);
+            this.btnDBConfig.Image = global::biometrics_server.Properties.Resources.db1;
+            this.btnDBConfig.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDBConfig.Location = new System.Drawing.Point(15, 228);
+            this.btnDBConfig.Name = "btnDBConfig";
+            this.btnDBConfig.Size = new System.Drawing.Size(109, 77);
+            this.btnDBConfig.TabIndex = 7;
+            this.btnDBConfig.Text = "Database Config";
+            this.btnDBConfig.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDBConfig.UseVisualStyleBackColor = true;
+            this.btnDBConfig.Click += new System.EventHandler(this.btn_DBConfig_Click);
             // 
             // frmMain
             // 
             this.ClientSize = new System.Drawing.Size(465, 328);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRealTimeLog);
             this.Controls.Add(this.btnDisconnect);
             this.Controls.Add(this.btnConnect);
-            this.Controls.Add(this.btn_ViewAttendance);
-            this.Controls.Add(this.btn_DBConfig);
+            this.Controls.Add(this.btnViewAttendance);
+            this.Controls.Add(this.btnDBConfig);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.txt_Port);
             this.Controls.Add(this.txt_IP);
@@ -216,11 +219,11 @@
         private System.Windows.Forms.TextBox txt_Port;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btn_DBConfig;
-        private System.Windows.Forms.Button btn_ViewAttendance;
+        private System.Windows.Forms.Button btnDBConfig;
+        private System.Windows.Forms.Button btnViewAttendance;
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Button btnDisconnect;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRealTimeLog;
     }
 }
 
