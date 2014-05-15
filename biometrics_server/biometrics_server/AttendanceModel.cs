@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace biometrics_server
 {
@@ -28,10 +29,12 @@ namespace biometrics_server
                     while(reader.Read())
                     {
                         lst.Items.Add(reader["attendance_employee"].ToString());
+                        DateTime aDate;
+                        DateTime.TryParse(reader["attendance_date"].ToString(), out aDate);
 
-                        lst.Items[lst.Items.Count - 1].SubItems.Add(reader["user_slug"].ToString());
-                        lst.Items[lst.Items.Count - 1].SubItems.Add(reader["attendance_date"].ToString());
-                        lst.Items[lst.Items.Count - 1].SubItems.Add(reader["attendance_date"].ToString());
+                        lst.Items[lst.Items.Count - 1].SubItems.Add(reader["user_name"].ToString());
+                        lst.Items[lst.Items.Count - 1].SubItems.Add(aDate.ToString("MMMM dd, yyyy"));
+                        lst.Items[lst.Items.Count - 1].SubItems.Add(aDate.ToString("hh:mm:ss tt"));
                     }
 
                 }
