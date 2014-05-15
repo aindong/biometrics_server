@@ -20,7 +20,13 @@ namespace biometrics_server
         private void btn_DBConfig_Click(object sender, EventArgs e)
         {
             frmConnect frm = new frmConnect();
-            frm.Show();
+            frm.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmAttendance frm = new frmAttendance();
+            frm.ShowDialog();
         }
     }
 }

@@ -165,8 +165,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmConnect";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Connection String";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
