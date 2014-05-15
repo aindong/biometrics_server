@@ -4,15 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Riss.Devices;
 
 namespace biometrics_server.Entity
 {
-    class DeviceCom
+    class DeviceComEty
     {
-        //public DeviceCom() { }
+        public DeviceComEty() { }
 
-        //public DeviceConnection DeviceConnection() { get; set; }
+        public DeviceConnection DeviceConnection { get; set; }
 
-        //public Device Device() { get; set; }
+        public Device Device { get; set; }
     }
 }
