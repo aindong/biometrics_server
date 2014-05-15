@@ -41,9 +41,9 @@ namespace biometrics_server
             {
                 
                 device = new Device();
-                device.DN = (int)1;
+                device.DN = 1;
                 device.Password = "0";
-                device.Model = "ZDC2911";
+                device.Model = "A-C030";
                 device.ConnectionModel = 5;//等于5时才能正确加载ZD2911通讯模块
 
                 if(rdb_Network.Checked == true){
