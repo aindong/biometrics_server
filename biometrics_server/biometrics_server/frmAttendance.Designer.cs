@@ -30,6 +30,14 @@
         {
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.listAttendance = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,11 +60,88 @@
             this.panel2.Size = new System.Drawing.Size(694, 45);
             this.panel2.TabIndex = 10;
             // 
+            // listAttendance
+            // 
+            this.listAttendance.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.listAttendance.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.listAttendance.FullRowSelect = true;
+            this.listAttendance.GridLines = true;
+            this.listAttendance.HoverSelection = true;
+            this.listAttendance.Location = new System.Drawing.Point(14, 124);
+            this.listAttendance.Name = "listAttendance";
+            this.listAttendance.Size = new System.Drawing.Size(422, 255);
+            this.listAttendance.TabIndex = 11;
+            this.listAttendance.UseCompatibleStateImageBehavior = false;
+            this.listAttendance.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Employee Name";
+            this.columnHeader1.Width = 250;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Date";
+            this.columnHeader2.Width = 80;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Time";
+            this.columnHeader3.Width = 80;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(17, 84);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 15);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Employee ID";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(98, 81);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 23);
+            this.textBox1.TabIndex = 13;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Start",
+            "End"});
+            this.comboBox1.Location = new System.Drawing.Point(255, 81);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 23);
+            this.comboBox1.TabIndex = 14;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(217, 84);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 15);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Date";
+            // 
             // frmAttendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 407);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.listAttendance);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -67,6 +152,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -74,5 +160,13 @@
 
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
+        public System.Windows.Forms.ListView listAttendance;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label2;
     }
 }

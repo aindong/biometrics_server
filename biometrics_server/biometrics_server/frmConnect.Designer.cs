@@ -99,6 +99,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(86, 168);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(172, 20);
             this.txtPassword.TabIndex = 13;
             // 
@@ -168,6 +169,7 @@
             this.MinimizeBox = false;
             this.Name = "frmConnect";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Connection String";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
