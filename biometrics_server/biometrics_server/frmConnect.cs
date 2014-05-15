@@ -21,5 +21,61 @@ namespace biometrics_server
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (checkEmpty() == true)
+            {
+                biometrics_server.Config.DB_Host = txtHost.Text;
+                biometrics_server.Config.DB_Name = txtName.Text;
+                biometrics_server.Config.DB_User = txtUser.Text;
+                biometrics_server.Config.DB_Pass = txtPassword.Text;
+            }
+            else
+            {
+                MessageBox.Show(this, "Please fill out all fields", "Information");
+            }
+            
+
+        }
+
+        private bool checkEmpty()
+        {
+            if (txtHost.Text == "")
+            {
+                return false;
+            }
+            else
+            {
+                if (txtName.Text == "")
+                {
+                    return false;
+                }
+                else
+                {
+                    if (txtPassword.Text == "")
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        if (txtUser.Text == "")
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }
