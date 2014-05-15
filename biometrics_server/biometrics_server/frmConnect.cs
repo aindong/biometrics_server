@@ -36,6 +36,7 @@ namespace biometrics_server
                 biometrics_server.Config.DB_User = txtUser.Text;
                 biometrics_server.Config.DB_Pass = txtPassword.Text;
                 MessageBox.Show(this, "Database config successfully updated", "Information");
+                biometrics_server.Config.saveSettings();
             }
             else
             {
