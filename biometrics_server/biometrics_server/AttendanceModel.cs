@@ -12,6 +12,37 @@ namespace biometrics_server
     class AttendanceModel
     {
         //load records
+        public static void searchUser(ref ListView lst, String id)
+        {
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(biometrics_server.Config.getConnectionString()))
+                {
+                    con.Open();
+
+                    string sql = "SELECT * FROM attendance INNER JOIN user ON user_id = attendance_id WHERE user_active = 1 WHERE attendace_id = @id";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+                    cmd.Parameters.AddWithValue("id", id);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    lst.Items.Clear();
+                    while (reader.Read())
+                    {
+                        lst.Items.Add(reader["attendance_employee"].ToString());
+                        DateTime aDate;
+                        DateTime.TryParse(reader["attendance_date"].ToString(), out aDate);
+                        lst.Items[lst.Items.Count - 1].SubItems.Add(reader["user_name"].ToString());
+                        lst.Items[lst.Items.Count - 1].SubItems.Add(aDate.ToString("MMMM dd, yyyy"));
+                        lst.Items[lst.Items.Count - 1].SubItems.Add(aDate.ToString("hh:mm:ss tt"));
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+
+            }
+        }
+        
         public static void loadRecord(ref ListView lst, ref ListView lstEmp)
         {
             try
@@ -125,7 +156,7 @@ namespace biometrics_server
                     cmd.ExecuteNonQuery();
                 }
             }
-            catch(MySqlException e)
+            catch(MySqlException ex)
             {
 
             }

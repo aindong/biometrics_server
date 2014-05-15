@@ -42,6 +42,22 @@ namespace biometrics_server
 
         }
 
+        private void lstEmployee_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstEmployee_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            AttendanceModel.loadRecord(ref lstAttendance, ref lstEmployee);
+        }
+        
+
         
     }
 }
