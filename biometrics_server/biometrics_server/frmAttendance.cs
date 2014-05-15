@@ -16,5 +16,7 @@ namespace biometrics_server
         {
             InitializeComponent();
         }
+
+        
     }
 }

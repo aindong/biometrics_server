@@ -30,10 +30,10 @@
         {
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.Employee = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Time = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listAttendee = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,36 +56,40 @@
             this.panel2.Size = new System.Drawing.Size(694, 45);
             this.panel2.TabIndex = 10;
             // 
-            // listView1
+            // listAttendee
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Employee,
-            this.Date,
-            this.Time});
-            this.listView1.Location = new System.Drawing.Point(14, 81);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(694, 97);
-            this.listView1.TabIndex = 11;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listAttendee.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.listAttendee.Location = new System.Drawing.Point(14, 81);
+            this.listAttendee.Name = "listAttendee";
+            this.listAttendee.Size = new System.Drawing.Size(487, 97);
+            this.listAttendee.TabIndex = 11;
+            this.listAttendee.UseCompatibleStateImageBehavior = false;
+            this.listAttendee.View = System.Windows.Forms.View.Details;
             // 
-            // Employee
+            // columnHeader1
             // 
-            this.Employee.Text = "Employee";
+            this.columnHeader1.Text = "Employee";
+            this.columnHeader1.Width = 250;
             // 
-            // Date
+            // columnHeader2
             // 
-            this.Date.Text = "Date";
+            this.columnHeader2.Text = "Date";
+            this.columnHeader2.Width = 80;
             // 
-            // Time
+            // columnHeader3
             // 
-            this.Time.Text = "Time";
+            this.columnHeader3.Text = "Time";
+            this.columnHeader3.Width = 80;
             // 
             // frmAttendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 407);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.listAttendee);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -103,9 +107,9 @@
 
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader Employee;
-        private System.Windows.Forms.ColumnHeader Date;
-        private System.Windows.Forms.ColumnHeader Time;
+        public System.Windows.Forms.ListView listAttendee;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }
