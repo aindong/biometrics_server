@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace biometrics_server
 {
-    public partial class frmMain : Form
+    public partial class frmAttendance : Form
     {
-        public frmMain()
+        public frmAttendance()
         {
             InitializeComponent();
-        }
-
-        private void btn_DBConfig_Click(object sender, EventArgs e)
-        {
-            frmConnect frm = new frmConnect();
-            frm.Show();
         }
     }
 }
