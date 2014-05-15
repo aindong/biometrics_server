@@ -47,7 +47,7 @@ namespace biometrics_server
         }
 
         //load record by date
-        public static void loadRecord(ref ListView lst)
+        public static void loadRecordWithFilter(ref ListView lst, DateTime start, DateTime end, string empID = "")
         {
             try
             {
@@ -55,13 +55,26 @@ namespace biometrics_server
                 {
                     con.Open();
 
-                    string sql = "SELECT * FROM attendance WHERE attendance_date BETWEEN @start AND @end";
+                    string sql = "";
+
+                    if(empID == "")
+                    {
+                        sql = "SELECT * FROM attendance WHERE attendance_date BETWEEN @start AND @end";
+                    }
+                    else
+                    {
+                        sql = "SELECT * FROM attendance WHERE attendance_employee = @empID attendance_date BETWEEN @start AND @end";
+                    }
+                    
                     MySqlCommand cmd = new MySqlCommand(sql, con);
 
-
                     //parameters
-                    
-                    
+                    if (empID != "")
+                    {
+                        cmd.Parameters.AddWithValue("empID", empID);
+                    }
+                    cmd.Parameters.AddWithValue("start", start);
+                    cmd.Parameters.AddWithValue("end", end);
 
                     MySqlDataReader reader = cmd.ExecuteReader();
 
