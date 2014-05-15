@@ -79,7 +79,6 @@
             this.columnHeader3});
             this.lstAttendance.FullRowSelect = true;
             this.lstAttendance.GridLines = true;
-            this.lstAttendance.HoverSelection = true;
             this.lstAttendance.Location = new System.Drawing.Point(247, 161);
             this.lstAttendance.Name = "lstAttendance";
             this.lstAttendance.Size = new System.Drawing.Size(647, 242);
@@ -271,7 +270,6 @@
 
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
-        public System.Windows.Forms.ListView lstAttendance;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -289,5 +287,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ListView lstAttendance;
     }
 }
