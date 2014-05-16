@@ -77,6 +77,7 @@ namespace biometrics_server
                     deviceEty.Device = device;
                     deviceEty.DeviceConnection = deviceConnection;
                     btnDisconnect.Enabled = true;
+                    MessageBox.Show("Device successfully connected", "System", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {

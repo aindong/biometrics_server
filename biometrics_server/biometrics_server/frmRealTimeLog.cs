@@ -58,6 +58,8 @@ namespace biometrics_server
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
+            
+
             try
             {
                 if (btnConnect.Text.Trim().Equals("Listen"))
