@@ -143,7 +143,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 376);
+            this.ClientSize = new System.Drawing.Size(714, 376);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.txt_Port);
