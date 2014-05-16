@@ -46,7 +46,7 @@ namespace biometrics_server
                 using (MySqlConnection con = new MySqlConnection(biometrics_server.Config.getConnectionString()))
                 {
                     con.Open();
-                    string sql = "SELECT * FROM attendance INNER JOIN user ON user_id = attendance_employee WHERE user_active = 1 AND attendance_employee = @id";
+                    string sql = "SELECT * FROM attendance INNER JOIN user ON user_id = attendance_employee WHERE user_active = 1 AND attendance_employee = @id ORDER BY attendance_date ASC";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
                     cmd.Parameters.AddWithValue("id", id);
@@ -78,7 +78,7 @@ namespace biometrics_server
                 {
                     con.Open();
 
-                    string sql = "SELECT * FROM attendance INNER JOIN user ON user_id = attendance_employee WHERE user_active = 1";
+                    string sql = "SELECT * FROM attendance INNER JOIN user ON user_id = attendance_employee WHERE user_active = 1 ORDER BY attendance_date ASC";
                     MySqlCommand cmd = new MySqlCommand(sql, con);
 
                     MySqlDataReader reader = cmd.ExecuteReader();
@@ -115,11 +115,11 @@ namespace biometrics_server
 
                     if(empID == "")
                     {
-                        sql = "SELECT * FROM attendance INNER JOIN user ON user_id = attendance_employee WHERE user_active = 1 AND attendance_date BETWEEN @start AND @end";
+                        sql = "SELECT * FROM attendance INNER JOIN user ON user_id = attendance_employee WHERE user_active = 1 AND attendance_date BETWEEN @start AND @end ORDER BY attendance_date ASC";
                     }
                     else
                     {
-                        sql = "SELECT * FROM attendance INNER JOIN user ON user_id = attendance_employee WHERE user_active = 1 AND attendance_employee = @empID AND attendance_date BETWEEN @start AND @end";
+                        sql = "SELECT * FROM attendance INNER JOIN user ON user_id = attendance_employee WHERE user_active = 1 AND attendance_employee = @empID AND attendance_date BETWEEN @start AND @end ORDER BY attendance_date ASC";
                     }
                     
                     MySqlCommand cmd = new MySqlCommand(sql, con);
