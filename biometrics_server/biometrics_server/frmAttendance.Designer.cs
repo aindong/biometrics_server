@@ -65,9 +65,9 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Orange;
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(14, 14);
+            this.panel2.Location = new System.Drawing.Point(3, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(880, 45);
+            this.panel2.Size = new System.Drawing.Size(901, 45);
             this.panel2.TabIndex = 10;
             // 
             // lstAttendance
@@ -124,6 +124,8 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(324, 23);
             this.textBox1.TabIndex = 13;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label2
             // 
@@ -143,6 +145,8 @@
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(121, 23);
             this.dtpStart.TabIndex = 16;
+            this.dtpStart.ValueChanged += new System.EventHandler(this.dtpStart_ValueChanged);
+            this.dtpStart.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpStart_KeyPress);
             // 
             // dtpEnd
             // 
@@ -151,6 +155,7 @@
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(122, 23);
             this.dtpEnd.TabIndex = 18;
+            this.dtpEnd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpEnd_KeyPress);
             // 
             // label3
             // 
@@ -238,7 +243,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(966, 414);
+            this.ClientSize = new System.Drawing.Size(907, 414);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.lstEmployee);

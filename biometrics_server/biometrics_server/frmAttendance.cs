@@ -65,6 +65,40 @@ namespace biometrics_server
             AttendanceModel.loadRecordWithFilter(ref lstAttendance, dtpStart.Value.ToString("yyyy-MM-d"), dtpEnd.Value.ToString("yyyy-MM-d"), textBox1.Text);
             
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnSearch.PerformClick();
+            }
+        }
+
+        private void dtpStart_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpStart_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnSearch.PerformClick();
+            }
+        }
+
+        private void dtpEnd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnSearch.PerformClick();
+            }
+        }
         
 
         
