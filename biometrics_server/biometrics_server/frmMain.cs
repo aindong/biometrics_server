@@ -23,6 +23,7 @@ namespace biometrics_server
             InitializeComponent();
         }
 
+
         private void btn_DBConfig_Click(object sender, EventArgs e)
         {
             frmConnect frm = new frmConnect();
@@ -105,6 +106,12 @@ namespace biometrics_server
         {
             frmLogData frmLD = new frmLogData();
             frmLD.ShowDialog();
+        }
+
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
