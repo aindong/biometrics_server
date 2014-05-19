@@ -100,5 +100,11 @@ namespace biometrics_server
         {
             deviceConnection.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmLogData frmLD = new frmLogData();
+            frmLD.ShowDialog();
+        }
     }
 }

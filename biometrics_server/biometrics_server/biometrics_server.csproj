@@ -68,6 +68,12 @@
     <Compile Include="frmConnect.Designer.cs">
       <DependentUpon>frmConnect.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLogData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogData.Designer.cs">
+      <DependentUpon>frmLogData.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmConnect.resx">
       <DependentUpon>frmConnect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogData.resx">
+      <DependentUpon>frmLogData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

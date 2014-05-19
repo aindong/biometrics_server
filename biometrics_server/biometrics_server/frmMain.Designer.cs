@@ -44,6 +44,7 @@
             this.btnConnect = new System.Windows.Forms.Button();
             this.btnViewAttendance = new System.Windows.Forms.Button();
             this.btnDBConfig = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +55,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(3, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(510, 39);
+            this.panel1.Size = new System.Drawing.Size(644, 39);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -107,7 +108,7 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(3, 180);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(510, 39);
+            this.panel2.Size = new System.Drawing.Size(644, 39);
             this.panel2.TabIndex = 5;
             // 
             // label4
@@ -219,9 +220,23 @@
             this.btnDBConfig.UseVisualStyleBackColor = true;
             this.btnDBConfig.Click += new System.EventHandler(this.btn_DBConfig_Click);
             // 
+            // button2
+            // 
+            this.button2.Image = global::biometrics_server.Properties.Resources.history;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button2.Location = new System.Drawing.Point(525, 237);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(109, 77);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Get Log Data";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // frmMain
             // 
-            this.ClientSize = new System.Drawing.Size(519, 330);
+            this.ClientSize = new System.Drawing.Size(649, 330);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.rdb_USB);
             this.Controls.Add(this.rdb_Network);
@@ -268,6 +283,7 @@
         private System.Windows.Forms.RadioButton rdb_Network;
         private System.Windows.Forms.RadioButton rdb_USB;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
