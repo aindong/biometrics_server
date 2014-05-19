@@ -86,6 +86,11 @@ namespace biometrics_server
             }
         }
 
+        private void frmRealTimeLog_Load(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }
