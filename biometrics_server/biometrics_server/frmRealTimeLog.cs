@@ -52,7 +52,7 @@ namespace biometrics_server
             string action = ConvertObject.IOMode(record.Action);
             ListViewItem lvi = new ListViewItem(new string[]{no.ToString(), record.DN.ToString(), record.DIN.ToString(),
                 string.Empty, action, record.Clock.ToString("yyyy-MM-dd HH:mm:ss")});
-            BeginInvoke(new AddRecord(AddRecordToListView), new object[] { lvi });
+            this.BeginInvoke(new AddRecord(AddRecordToListView), new object[] { lvi });
             no++;
 
             MessageBox.Show(record.DN.ToString());
