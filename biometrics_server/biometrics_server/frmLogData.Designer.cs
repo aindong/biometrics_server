@@ -223,26 +223,13 @@
             this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "15",
-            "20",
-            "25",
-            "30",
-            "35",
             "40",
-            "45",
             "50",
-            "55",
-            "60"});
+            "60",
+            "120",
+            "240",
+            "480",
+            "960"});
             this.comboBox1.Location = new System.Drawing.Point(16, 127);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 29);
@@ -260,6 +247,7 @@
             // timer1
             // 
             this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frmLogData
             // 
@@ -281,7 +269,7 @@
             this.Controls.Add(this.lvw_GLogList);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmLogData";
-            this.Text = "frmLogData";
+            this.Text = "Biometrics Raw Data";
             this.Load += new System.EventHandler(this.frmLogData_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

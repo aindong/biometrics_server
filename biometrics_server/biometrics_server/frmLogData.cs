@@ -158,13 +158,20 @@ namespace biometrics_server.UI
                 timer1.Interval = int.Parse(comboBox1.Text) * 100;
                 timer1.Enabled = true;
                 button2.Text = "Stop Realtime Logs";
+                isRealTime = true;
             }
             else
             {
                 timer1.Enabled = false;
                 button2.Text = "Start Realtime Logs";
+                isRealTime = false;
             }
             
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            getLogs();
         }
     }
 }
