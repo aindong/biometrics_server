@@ -87,6 +87,7 @@
     <Compile Include="frmRealTimeLog.Designer.cs">
       <DependentUpon>frmRealTimeLog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Global.cs" />
     <Compile Include="IConvert\ConvertObject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

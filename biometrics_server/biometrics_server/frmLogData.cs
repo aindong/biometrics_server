@@ -7,18 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Riss.Devices;
-using biometrics_server.Entity;
+using biometrics_server.Business;
 using biometrics_server.IConvert;
+using biometrics_server.Entity;
+using Riss.Devices;
 
-namespace biometrics_server
+
+namespace biometrics_server.UI
+
 {
     public partial class frmLogData : Form
     {
         private Device device;
         private DeviceConnection deviceConnection;
-        private DeviceComEty deviceEty;
-        public frmLogData()
+
+        public frmLogData(DeviceComEty deviceEty)
         {
             InitializeComponent();
             device = deviceEty.Device;

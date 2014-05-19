@@ -1,4 +1,4 @@
-﻿namespace biometrics_server
+﻿namespace biometrics_server.UI
 {
     partial class frmLogData
     {

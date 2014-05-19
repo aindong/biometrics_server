@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace biometrics_server.Entity
 {
-    class DeviceComEty
+    public class DeviceComEty
     {
         public DeviceComEty() { }
 

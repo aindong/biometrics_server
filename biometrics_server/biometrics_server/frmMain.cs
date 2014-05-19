@@ -18,6 +18,7 @@ namespace biometrics_server
         private Device device;
         private DeviceConnection deviceConnection;
         private DeviceComEty deviceEty;
+
         public frmMain()
         {
             InitializeComponent();
@@ -104,8 +105,8 @@ namespace biometrics_server
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //frmLogData frmLD = new frmLogData();
-            //frmLD.ShowDialog();
+            UI.frmLogData frmLD = new UI.frmLogData(deviceEty);
+            frmLD.ShowDialog();
         }
 
 
