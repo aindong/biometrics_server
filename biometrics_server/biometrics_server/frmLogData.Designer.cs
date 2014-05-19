@@ -41,6 +41,7 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lbl_EndDate = new System.Windows.Forms.Label();
             this.lbl_BeginDate = new System.Windows.Forms.Label();
+            this.chk_NewFlag = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // dtp_End
@@ -69,6 +70,7 @@
             this.btn_DownloadHistory.TabIndex = 18;
             this.btn_DownloadHistory.Text = "Get All Glog";
             this.btn_DownloadHistory.UseVisualStyleBackColor = true;
+            this.btn_DownloadHistory.Click += new System.EventHandler(this.btn_DownloadHistory_Click);
             // 
             // btn_Clear
             // 
@@ -78,6 +80,7 @@
             this.btn_Clear.TabIndex = 19;
             this.btn_Clear.Text = "Clear All Glog";
             this.btn_Clear.UseVisualStyleBackColor = true;
+            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
             // 
             // lvw_GLogList
             // 
@@ -153,11 +156,22 @@
             this.lbl_BeginDate.Text = "From:";
             this.lbl_BeginDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // chk_NewFlag
+            // 
+            this.chk_NewFlag.AutoSize = true;
+            this.chk_NewFlag.Location = new System.Drawing.Point(441, 401);
+            this.chk_NewFlag.Name = "chk_NewFlag";
+            this.chk_NewFlag.Size = new System.Drawing.Size(154, 19);
+            this.chk_NewFlag.TabIndex = 24;
+            this.chk_NewFlag.Text = "Clear New Glog Position";
+            this.chk_NewFlag.UseVisualStyleBackColor = true;
+            // 
             // frmLogData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(658, 480);
+            this.Controls.Add(this.chk_NewFlag);
             this.Controls.Add(this.lbl_EndDate);
             this.Controls.Add(this.lbl_BeginDate);
             this.Controls.Add(this.dtp_End);
@@ -189,5 +203,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.Label lbl_EndDate;
         private System.Windows.Forms.Label lbl_BeginDate;
+        private System.Windows.Forms.CheckBox chk_NewFlag;
     }
 }
