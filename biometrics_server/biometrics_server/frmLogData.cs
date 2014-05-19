@@ -188,5 +188,10 @@ namespace biometrics_server.UI
                 deviceConnection.SetProperty(DeviceProperty.Enable, extraProperty, device, extraData);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

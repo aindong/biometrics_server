@@ -38,13 +38,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.rdb_Network = new System.Windows.Forms.RadioButton();
             this.rdb_USB = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnRealTimeLog = new System.Windows.Forms.Button();
             this.btnDisconnect = new System.Windows.Forms.Button();
             this.btnConnect = new System.Windows.Forms.Button();
             this.btnViewAttendance = new System.Windows.Forms.Button();
             this.btnDBConfig = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnBiometricData = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -55,7 +53,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(3, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(644, 39);
+            this.panel1.Size = new System.Drawing.Size(515, 39);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -94,6 +92,7 @@
             this.txt_IP.Name = "txt_IP";
             this.txt_IP.Size = new System.Drawing.Size(117, 23);
             this.txt_IP.TabIndex = 0;
+            this.txt_IP.Text = "192.168.0.225";
             // 
             // txt_Port
             // 
@@ -101,6 +100,7 @@
             this.txt_Port.Name = "txt_Port";
             this.txt_Port.Size = new System.Drawing.Size(117, 23);
             this.txt_Port.TabIndex = 1;
+            this.txt_Port.Text = "5500";
             // 
             // panel2
             // 
@@ -108,7 +108,7 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(3, 180);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(644, 39);
+            this.panel2.Size = new System.Drawing.Size(515, 39);
             this.panel2.TabIndex = 5;
             // 
             // label4
@@ -144,31 +144,6 @@
             this.rdb_USB.Text = "USB Connection";
             this.rdb_USB.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Image = global::biometrics_server.Properties.Resources.NetByte_Design_Studio___0369;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(396, 237);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 77);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Sync Database";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnRealTimeLog
-            // 
-            this.btnRealTimeLog.Image = global::biometrics_server.Properties.Resources.history;
-            this.btnRealTimeLog.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRealTimeLog.Location = new System.Drawing.Point(137, 237);
-            this.btnRealTimeLog.Name = "btnRealTimeLog";
-            this.btnRealTimeLog.Size = new System.Drawing.Size(109, 77);
-            this.btnRealTimeLog.TabIndex = 9;
-            this.btnRealTimeLog.Text = "Real Time Log";
-            this.btnRealTimeLog.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnRealTimeLog.UseVisualStyleBackColor = true;
-            this.btnRealTimeLog.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // btnDisconnect
             // 
             this.btnDisconnect.Enabled = false;
@@ -198,9 +173,9 @@
             // 
             this.btnViewAttendance.Image = global::biometrics_server.Properties.Resources.Calendar;
             this.btnViewAttendance.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnViewAttendance.Location = new System.Drawing.Point(269, 237);
+            this.btnViewAttendance.Location = new System.Drawing.Point(390, 229);
             this.btnViewAttendance.Name = "btnViewAttendance";
-            this.btnViewAttendance.Size = new System.Drawing.Size(109, 77);
+            this.btnViewAttendance.Size = new System.Drawing.Size(117, 77);
             this.btnViewAttendance.TabIndex = 8;
             this.btnViewAttendance.Text = "View Attendance";
             this.btnViewAttendance.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -211,36 +186,35 @@
             // 
             this.btnDBConfig.Image = global::biometrics_server.Properties.Resources.db1;
             this.btnDBConfig.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDBConfig.Location = new System.Drawing.Point(10, 237);
+            this.btnDBConfig.Location = new System.Drawing.Point(12, 229);
             this.btnDBConfig.Name = "btnDBConfig";
-            this.btnDBConfig.Size = new System.Drawing.Size(109, 77);
+            this.btnDBConfig.Size = new System.Drawing.Size(117, 77);
             this.btnDBConfig.TabIndex = 7;
             this.btnDBConfig.Text = "Database Config";
             this.btnDBConfig.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDBConfig.UseVisualStyleBackColor = true;
             this.btnDBConfig.Click += new System.EventHandler(this.btn_DBConfig_Click);
             // 
-            // button2
+            // btnBiometricData
             // 
-            this.button2.Image = global::biometrics_server.Properties.Resources.history;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(525, 237);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 77);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Get Log Data";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnBiometricData.Enabled = false;
+            this.btnBiometricData.Image = global::biometrics_server.Properties.Resources.history;
+            this.btnBiometricData.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnBiometricData.Location = new System.Drawing.Point(261, 229);
+            this.btnBiometricData.Name = "btnBiometricData";
+            this.btnBiometricData.Size = new System.Drawing.Size(117, 77);
+            this.btnBiometricData.TabIndex = 13;
+            this.btnBiometricData.Text = "Biometric Data";
+            this.btnBiometricData.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBiometricData.UseVisualStyleBackColor = true;
+            this.btnBiometricData.Click += new System.EventHandler(this.button2_Click);
             // 
             // frmMain
             // 
-            this.ClientSize = new System.Drawing.Size(649, 330);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(522, 318);
+            this.Controls.Add(this.btnBiometricData);
             this.Controls.Add(this.rdb_USB);
             this.Controls.Add(this.rdb_Network);
-            this.Controls.Add(this.btnRealTimeLog);
             this.Controls.Add(this.btnDisconnect);
             this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.btnViewAttendance);
@@ -280,11 +254,9 @@
         private System.Windows.Forms.Button btnViewAttendance;
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Button btnDisconnect;
-        private System.Windows.Forms.Button btnRealTimeLog;
         private System.Windows.Forms.RadioButton rdb_Network;
         private System.Windows.Forms.RadioButton rdb_USB;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnBiometricData;
     }
 }
 

@@ -80,6 +80,7 @@ namespace biometrics_server
                     deviceEty.DeviceConnection = deviceConnection;
                     btnDisconnect.Enabled = true;
                     MessageBox.Show("Device successfully connected", "System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnBiometricData.Enabled = true;
                 }
                 else
                 {
@@ -101,6 +102,9 @@ namespace biometrics_server
         private void btnDisconnect_Click(object sender, EventArgs e)
         {
             deviceConnection.Close();
+            MessageBox.Show("Device has been disconnected","System Message");
+            btnBiometricData.Enabled = false;
+            btnDisconnect.Enabled = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
