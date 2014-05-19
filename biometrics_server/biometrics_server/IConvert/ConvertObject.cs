@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Riss.Devices;
 
 namespace biometrics_server.IConvert
 {
@@ -86,12 +87,10 @@ namespace biometrics_server.IConvert
         }
 
         //log message types
-        public static string SLogType(int opertationType)
-        {
+        public static string SLogType(int opertationType) {
             string message = string.Empty;
 
-            switch (opertationType)
-            {
+            switch (opertationType) {
                 case 1:
                     message = "Registered user";
                     break;
@@ -144,12 +143,10 @@ namespace biometrics_server.IConvert
             return message;
         }
 
-        public static string IOMode(int mode)
-        {
+        public static string IOMode(int mode) {
             string message = string.Empty;
 
-            switch (mode)
-            {
+            switch (mode) {
                 case 0:
                     message = "Check in";
                     break;
@@ -231,6 +228,31 @@ namespace biometrics_server.IConvert
             }
             return message;
         }
+
+        public static string GLogType(int opertationType) {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < 4; i++) {
+                if (0 != Zd2911Utils.BitCheck(opertationType, i)) {
+                    switch (i) {
+                        case 0:
+                            sb.Append("F ");
+                            break;
+                        case 1:
+                            sb.Append("P ");
+                            break;
+                        case 2:
+                            sb.Append("C ");
+                            break;
+                        case 3:
+                            sb.Append("I ");
+                            break;
+                    }
+                }
+            }
+            return sb.ToString();
+        }
+
+        
 
     }
 }

@@ -48,12 +48,14 @@ namespace biometrics_server
         private void listener_ReceiveHandler(object sender, ReceiveEventArg e)
         {
             Record record = e.record;
-            //string verify = ConvertObject.GLogType(record.Verify);
+            string verify = ConvertObject.GLogType(record.Verify);
             string action = ConvertObject.IOMode(record.Action);
             ListViewItem lvi = new ListViewItem(new string[]{no.ToString(), record.DN.ToString(), record.DIN.ToString(),
                 string.Empty, action, record.Clock.ToString("yyyy-MM-dd HH:mm:ss")});
             BeginInvoke(new AddRecord(AddRecordToListView), new object[] { lvi });
             no++;
+
+            MessageBox.Show(record.DN.ToString());
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
@@ -64,14 +66,14 @@ namespace biometrics_server
             {
                 if (btnConnect.Text.Trim().Equals("Listen"))
                 {
-                    MessageBox.Show(GetLocalIPAddress());
+                    //MessageBox.Show(GetLocalIPAddress());
                     Monitor m = new Monitor();
                     m.UDPAddress = GetLocalIPAddress();
                     m.UDPPort = 5500;
                     m.Mode = 0;
                     listener = Zd2911Monitor.CreateZd2911Monitor(m);
                     listener.ReceiveHandler += new ReceiveHandler(listener_ReceiveHandler);
-                    listener.OpenListen();
+                    listener.OpenListen().ToString();
                     btnConnect.Text = "Cancel";
                 }
                 else

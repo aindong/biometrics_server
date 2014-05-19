@@ -104,8 +104,8 @@ namespace biometrics_server
 
         private void button2_Click(object sender, EventArgs e)
         {
-            frmLogData frmLD = new frmLogData();
-            frmLD.ShowDialog();
+            //frmLogData frmLD = new frmLogData();
+            //frmLD.ShowDialog();
         }
 
 
