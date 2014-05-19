@@ -78,9 +78,9 @@ namespace biometrics_server
                     deviceEty = new DeviceComEty();
                     deviceEty.Device = device;
                     deviceEty.DeviceConnection = deviceConnection;
-                    btnDisconnect.Enabled = true;
                     MessageBox.Show("Device successfully connected", "System", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnBiometricData.Enabled = true;
+                    btnDisconnect.Enabled = true;
                 }
                 else
                 {
@@ -102,7 +102,7 @@ namespace biometrics_server
         private void btnDisconnect_Click(object sender, EventArgs e)
         {
             deviceConnection.Close();
-            MessageBox.Show("Device has been disconnected","System Message");
+            MessageBox.Show("Device has been disconnected", "System", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             btnBiometricData.Enabled = false;
             btnDisconnect.Enabled = false;
         }

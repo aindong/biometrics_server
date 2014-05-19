@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "biometrics_server", "biometrics_server\biometrics_server.csproj", "{A10023F0-3E3A-4D43-A4A4-B92F1FB8771C}"
 EndProject
