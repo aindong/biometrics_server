@@ -77,7 +77,7 @@
             this.txt_Port.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Port.Location = new System.Drawing.Point(53, 80);
             this.txt_Port.Name = "txt_Port";
-            this.txt_Port.Size = new System.Drawing.Size(117, 23);
+            this.txt_Port.Size = new System.Drawing.Size(143, 23);
             this.txt_Port.TabIndex = 3;
             this.txt_Port.Text = "5005";
             // 
@@ -86,7 +86,7 @@
             this.btnConnect.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnect.Image = global::biometrics_server.Properties.Resources.Forward;
             this.btnConnect.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnConnect.Location = new System.Drawing.Point(176, 61);
+            this.btnConnect.Location = new System.Drawing.Point(202, 61);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(79, 57);
             this.btnConnect.TabIndex = 4;
