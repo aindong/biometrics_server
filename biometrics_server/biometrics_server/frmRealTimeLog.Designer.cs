@@ -79,7 +79,7 @@
             this.txt_Port.Name = "txt_Port";
             this.txt_Port.Size = new System.Drawing.Size(143, 23);
             this.txt_Port.TabIndex = 3;
-            this.txt_Port.Text = "5005";
+            this.txt_Port.Text = "5500";
             // 
             // btnConnect
             // 

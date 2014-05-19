@@ -64,9 +64,10 @@ namespace biometrics_server
             {
                 if (btnConnect.Text.Trim().Equals("Listen"))
                 {
+                    MessageBox.Show(GetLocalIPAddress());
                     Monitor m = new Monitor();
                     m.UDPAddress = GetLocalIPAddress();
-                    m.UDPPort = 5055;
+                    m.UDPPort = 5500;
                     m.Mode = 0;
                     listener = Zd2911Monitor.CreateZd2911Monitor(m);
                     listener.ReceiveHandler += new ReceiveHandler(listener_ReceiveHandler);
