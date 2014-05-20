@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.dtp_End = new System.Windows.Forms.DateTimePicker();
             this.dtp_Begin = new System.Windows.Forms.DateTimePicker();
-            this.btn_DownloadHistory = new System.Windows.Forms.Button();
-            this.btn_Clear = new System.Windows.Forms.Button();
             this.lvw_GLogList = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -43,13 +41,15 @@
             this.lbl_EndDate = new System.Windows.Forms.Label();
             this.lbl_BeginDate = new System.Windows.Forms.Label();
             this.chk_NewFlag = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_DownloadHistory = new System.Windows.Forms.Button();
+            this.btn_Clear = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,30 +70,6 @@
             this.dtp_Begin.Name = "dtp_Begin";
             this.dtp_Begin.Size = new System.Drawing.Size(120, 23);
             this.dtp_Begin.TabIndex = 21;
-            // 
-            // btn_DownloadHistory
-            // 
-            this.btn_DownloadHistory.Image = global::biometrics_server.Properties.Resources.Health;
-            this.btn_DownloadHistory.Location = new System.Drawing.Point(361, 78);
-            this.btn_DownloadHistory.Name = "btn_DownloadHistory";
-            this.btn_DownloadHistory.Size = new System.Drawing.Size(109, 77);
-            this.btn_DownloadHistory.TabIndex = 18;
-            this.btn_DownloadHistory.Text = "Get All Glog";
-            this.btn_DownloadHistory.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_DownloadHistory.UseVisualStyleBackColor = true;
-            this.btn_DownloadHistory.Click += new System.EventHandler(this.btn_DownloadHistory_Click);
-            // 
-            // btn_Clear
-            // 
-            this.btn_Clear.Enabled = false;
-            this.btn_Clear.Location = new System.Drawing.Point(476, 78);
-            this.btn_Clear.Name = "btn_Clear";
-            this.btn_Clear.Size = new System.Drawing.Size(109, 77);
-            this.btn_Clear.TabIndex = 19;
-            this.btn_Clear.Text = "Clear All Glog";
-            this.btn_Clear.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_Clear.UseVisualStyleBackColor = true;
-            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
             // 
             // lvw_GLogList
             // 
@@ -179,19 +155,6 @@
             this.chk_NewFlag.Text = "Clear New Glog Position";
             this.chk_NewFlag.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Image = global::biometrics_server.Properties.Resources.NetByte_Design_Studio___0369;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(602, 78);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 77);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Add to Database";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Orange;
@@ -252,6 +215,46 @@
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // button1
+            // 
+            this.button1.Image = global::biometrics_server.Properties.Resources.NetByte_Design_Studio___0369;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(602, 78);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(109, 77);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Add to Database";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btn_DownloadHistory
+            // 
+            this.btn_DownloadHistory.Image = global::biometrics_server.Properties.Resources.Health;
+            this.btn_DownloadHistory.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_DownloadHistory.Location = new System.Drawing.Point(361, 78);
+            this.btn_DownloadHistory.Name = "btn_DownloadHistory";
+            this.btn_DownloadHistory.Size = new System.Drawing.Size(109, 77);
+            this.btn_DownloadHistory.TabIndex = 18;
+            this.btn_DownloadHistory.Text = "Get All Glog";
+            this.btn_DownloadHistory.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_DownloadHistory.UseVisualStyleBackColor = true;
+            this.btn_DownloadHistory.Click += new System.EventHandler(this.btn_DownloadHistory_Click);
+            // 
+            // btn_Clear
+            // 
+            this.btn_Clear.Enabled = false;
+            this.btn_Clear.Image = global::biometrics_server.Properties.Resources.error;
+            this.btn_Clear.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_Clear.Location = new System.Drawing.Point(476, 78);
+            this.btn_Clear.Name = "btn_Clear";
+            this.btn_Clear.Size = new System.Drawing.Size(109, 77);
+            this.btn_Clear.TabIndex = 19;
+            this.btn_Clear.Text = "Clear All Glog";
+            this.btn_Clear.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_Clear.UseVisualStyleBackColor = true;
+            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
             // 
             // frmLogData
             // 

@@ -134,6 +134,7 @@
     <Content Include="Data\C#\Riss.Devices.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\error.png" />
     <None Include="Resources\Health.png" />
     <None Include="Resources\NetByte Design Studio - 0369.png" />
     <None Include="Resources\Circulation.png" />

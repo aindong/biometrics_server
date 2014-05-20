@@ -118,32 +118,36 @@ namespace biometrics_server.UI
 
         private void btn_Clear_Click(object sender, EventArgs e)
         {
-            object extraProperty = new object();
-            object extraData = new object();
-            extraData = Global.DeviceBusy;
+            DialogResult dr =  MessageBox.Show("Do you want to delete all log from selected date?", "System Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dr == DialogResult.Yes)
+            {
+               object extraProperty = new object();
+                object extraData = new object();
+                extraData = Global.DeviceBusy;
 
-            try
-            {
-                bool result = deviceConnection.SetProperty(DeviceProperty.Enable, extraProperty, device, extraData);
-                result = deviceConnection.SetProperty(DeviceProperty.AttRecords, extraProperty, device, extraData);
-                if (result)
+                try
                 {
-                    lvw_GLogList.Items.Clear();
-                    MessageBox.Show("Clear All Glog Success", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    bool result = deviceConnection.SetProperty(DeviceProperty.Enable, extraProperty, device, extraData);
+                    result = deviceConnection.SetProperty(DeviceProperty.AttRecords, extraProperty, device, extraData);
+                    if (result)
+                    {
+                        lvw_GLogList.Items.Clear();
+                        MessageBox.Show("Clear All Glog Success", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Clear All Glog Fail", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Clear All Glog Fail", "Prompt", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                extraData = Global.DeviceIdle;
-                deviceConnection.SetProperty(DeviceProperty.Enable, extraProperty, device, extraData);
+                finally
+                {
+                    extraData = Global.DeviceIdle;
+                    deviceConnection.SetProperty(DeviceProperty.Enable, extraProperty, device, extraData);
+                }
             }
         }
 
