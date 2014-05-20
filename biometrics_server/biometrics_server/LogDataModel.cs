@@ -62,12 +62,12 @@ namespace biometrics_server
             if (count == 0)
             {
                 progressBar.Visible = false;
-                MessageBox.Show("No data to sync at this particular date range.");
+                MessageBox.Show("No data to sync at this particular date range.", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 progressBar.Value = lstBiometricData.Items.Count;
-                MessageBox.Show("Date has been synced.");
+                MessageBox.Show("Data has been synced.", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 progressBar.Visible = false;
             }
            
