@@ -11,7 +11,10 @@ namespace biometrics_server
 {
     class AttendanceModel
     {
-        //load employee
+        /// <summary>
+        /// Load employee record
+        /// </summary>
+        /// <param name="lstEmp">Listview</param>
         public static void loadEmployee(ref ListView lstEmp)
         {
             try{
@@ -31,14 +34,19 @@ namespace biometrics_server
                     }
                 }
             }catch(MySqlException ex){
-
+                //loading of employee failed
+                MessageBox.Show("Error: " + ex.Message.ToString());
             }
            
         }
         
 
    
-       //search user using double click
+       /// <summary>
+       /// Search for a user
+       /// </summary>
+       /// <param name="lst">Listview</param>
+       /// <param name="id">String</param>
         public static void searchUser(ref ListView lst, String id)
         {
             try
@@ -69,7 +77,11 @@ namespace biometrics_server
             }
         }
 
-        //load records
+        /// <summary>
+        /// Load Record with filters
+        /// </summary>
+        /// <param name="lst">ListView</param>
+        /// <param name="lstEmp">ListView</param>
         public static void loadRecord(ref ListView lst, ref ListView lstEmp)
         {
             try
@@ -98,11 +110,17 @@ namespace biometrics_server
             }
             catch(MySqlException ex)
             {
-
+                MessageBox.Show("Error: " + ex.Message.ToString());
             }
         }
 
-        //load record by date
+        /// <summary>
+        /// Loading record with date and ID filter
+        /// </summary>
+        /// <param name="lst">ListView</param>
+        /// <param name="start">String</param>
+        /// <param name="end">String</param>
+        /// <param name="empID">String</param>
         public static void loadRecordWithFilter(ref ListView lst, string start, string end, string empID)
         {
             try
@@ -155,7 +173,16 @@ namespace biometrics_server
             }
         }
 
-        //insert record
+        /// <summary>
+        /// Insert new record in the attendance
+        /// </summary>
+        /// <param name="attendance_employee">int</param>
+        /// <param name="attendance_date">String</param>
+        /// <param name="attendance_active">int</param>
+        /// <param name="attendance_type">String</param>
+        /// <param name="attedance_flag">int</param>
+        /// <param name="attendance_created">String</param>
+        /// <param name="attendace_updated">String</param>
         public static void insertRecord(int attendance_employee, string attendance_date, int attendance_active, string attendance_type, int attedance_flag, string attendance_created, string attendace_updated)
         {
             try
@@ -181,7 +208,8 @@ namespace biometrics_server
             }
             catch(MySqlException ex)
             {
-
+                //inserting new record failed
+                MessageBox.Show("Error: " + ex.Message.ToString());
             }
             
         }
