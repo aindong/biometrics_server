@@ -17,15 +17,39 @@ namespace biometrics_server
         {
             for (int ctr = 0; ctr < lstBiometricData.Items.Count; ctr++)
             {
+                //get listview data and store it to variable
                 string id = lstBiometricData.Items[ctr].SubItems[2].Text;
-                
-                using (MySqlConnection con = new MySqlConnection(biometrics_server.Config.getConnectionString()))
+                string verifyMode = lstBiometricData.Items[ctr].SubItems[3].Text;
+                if (verifyMode == "F C P I")
                 {
-                    con.Open();
-                    string sql = "SELECT ";
+                    MessageBox.Show("True");
+                    break;
                 }
+                string type = lstBiometricData.Items[ctr].SubItems[4].Text; //action (timeIn, timeOut etc)
+                string attendanceDate = lstBiometricData.Items[ctr].SubItems[5].Text;
+                DateTime dateNow = DateTime.Now;
+                try
+                {
+                    using (MySqlConnection con = new MySqlConnection(biometrics_server.Config.getConnectionString()))
+                    {
+                        con.Open();
+
+                        string sql = "INSERT INTO attendance SET attendance_employee = @id, attendance_date = @attendanceDate, attendance_active = 1, attendance_type = @type, attendance_flag = 0, attendance_created = @dateNow, attendance_updated = @dateNow";
+                        MySqlCommand cmd = new MySqlCommand(sql, con);
+                        cmd.Parameters.AddWithValue("id", id);
+                        cmd.Parameters.AddWithValue("attendanceDate", attendanceDate);
+                        cmd.Parameters.AddWithValue("type", type);
+                        cmd.Parameters.AddWithValue("dateNow", dateNow);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch(MySqlException ex){
+                    MessageBox.Show("Error: " + ex.Message.ToString());
+                }
+               
             }
             
         }
     }
 }
+
