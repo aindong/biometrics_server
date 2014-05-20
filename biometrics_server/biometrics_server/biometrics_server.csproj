@@ -89,6 +89,7 @@
     </Compile>
     <Compile Include="Global.cs" />
     <Compile Include="IConvert\ConvertObject.cs" />
+    <Compile Include="LogDataModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAttendance.resx">
@@ -133,6 +134,7 @@
     <Content Include="Data\C#\Riss.Devices.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Health.png" />
     <None Include="Resources\NetByte Design Studio - 0369.png" />
     <None Include="Resources\Circulation.png" />
     <None Include="Resources\search.png" />

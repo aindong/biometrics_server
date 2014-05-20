@@ -149,6 +149,9 @@ namespace biometrics_server.UI
         private void button1_Click(object sender, EventArgs e)
         {
 
+            LogDataModel.syncData(ref lvw_GLogList);
+
+            //;
         }
 
         private void button2_Click(object sender, EventArgs e)

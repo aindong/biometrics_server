@@ -73,21 +73,25 @@
             // 
             // btn_DownloadHistory
             // 
+            this.btn_DownloadHistory.Image = global::biometrics_server.Properties.Resources.Health;
             this.btn_DownloadHistory.Location = new System.Drawing.Point(361, 78);
             this.btn_DownloadHistory.Name = "btn_DownloadHistory";
             this.btn_DownloadHistory.Size = new System.Drawing.Size(109, 77);
             this.btn_DownloadHistory.TabIndex = 18;
             this.btn_DownloadHistory.Text = "Get All Glog";
+            this.btn_DownloadHistory.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_DownloadHistory.UseVisualStyleBackColor = true;
             this.btn_DownloadHistory.Click += new System.EventHandler(this.btn_DownloadHistory_Click);
             // 
             // btn_Clear
             // 
+            this.btn_Clear.Enabled = false;
             this.btn_Clear.Location = new System.Drawing.Point(476, 78);
             this.btn_Clear.Name = "btn_Clear";
             this.btn_Clear.Size = new System.Drawing.Size(109, 77);
             this.btn_Clear.TabIndex = 19;
             this.btn_Clear.Text = "Clear All Glog";
+            this.btn_Clear.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_Clear.UseVisualStyleBackColor = true;
             this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
             // 
