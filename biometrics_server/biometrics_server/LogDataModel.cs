@@ -9,20 +9,22 @@ using System.Windows.Forms;
 
 namespace biometrics_server
 {
+    //model for Form Log Data
     class LogDataModel
     {
-        //Add biometric data to Database
-
+        //Function that executes adding of biometrics login data to Operations Database
         public static void syncData(ref ListView lstBiometricData, ref ProgressBar progressBar)
         {
-            //count
+            //count variable is use for progress bar
             int count = 0;
+            //loop through list view and add it to Operations Database
             for (int ctr = 0; ctr < lstBiometricData.Items.Count; ctr++)
             {
                 //get listview data and store it to variable (avoiding long line of codes)
                 string id = lstBiometricData.Items[ctr].SubItems[2].Text;
                 string verifyMode = lstBiometricData.Items[ctr].SubItems[3].Text;
-                if (verifyMode == "FCPI") //if not equal to "P C", employee didnt login successfully
+                //FCPI means failed to log in.
+                if (verifyMode == "FCPI")
                 {
                     MessageBox.Show("True");
                     break;
@@ -32,23 +34,26 @@ namespace biometrics_server
                 DateTime dateNow = DateTime.Now;
                 try
                 {
-                    //insert record to attendance table
                     using (MySqlConnection con = new MySqlConnection(biometrics_server.Config.getConnectionString()))
                     {
+                        //check if data is already stored in the Database
                         con.Open();
-                        //check if already stored in the database
                         string checkData = "SELECT * FROM attendance WHERE attendance_employee = @id AND attendance_date = @attendanceDate";
                         MySqlCommand cmdData = new MySqlCommand(checkData, con);
-                        //add parameters to command, accessible by using '@'
+                        //catch parameters and add it to command parameter
+                        //command parameters are accessible by using '@' in sql
                         cmdData.Parameters.AddWithValue("id", id);
                         cmdData.Parameters.AddWithValue("attendanceDate", attendanceDate);
                        
+                        //execute the query. adding row/s to reader
                         MySqlDataReader reader = cmdData.ExecuteReader();
-                        //if not, insert biometric data to database, call to function insertBiometricsData
                         reader.Read();
+                        //if no rows were found, add it to Database
                         if (!reader.HasRows)
                         {
+                            //add 1 to progress bar.
                             progressBar.Value = progressBar.Value + 1;
+                            //call function to insert data to Database
                             insertBiometricsData(id, attendanceDate, type, dateNow);
                             count++;
                         }
@@ -59,6 +64,8 @@ namespace biometrics_server
                 }
 
             }
+            //this is for progressbar and messagebox
+            //if count is zero, it means no data to sync
             if (count == 0)
             {
                 progressBar.Visible = false;
@@ -83,10 +90,13 @@ namespace biometrics_server
                     con.Open();
                     string sql = "INSERT INTO attendance (attendance_employee, attendance_date, attendance_active, attendance_type, attendance_flag, attendance_created, attendance_updated) VALUES(@id, @attendanceDate, 1, @type, 0, @dateNow, @dateNow)";
                     MySqlCommand cmd = new MySqlCommand(sql, con);
+                    //catch parameters and add it to command parameter
+                    //command parameters are accessible by using '@' in sql
                     cmd.Parameters.AddWithValue("id", id);
                     cmd.Parameters.AddWithValue("attendanceDate", attendanceDate);
                     cmd.Parameters.AddWithValue("type", type);
                     cmd.Parameters.AddWithValue("dateNow", dateNow);
+                    //execute the query
                     cmd.ExecuteNonQuery();
                 }
             }
