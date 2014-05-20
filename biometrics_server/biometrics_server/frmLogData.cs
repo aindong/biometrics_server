@@ -230,6 +230,7 @@ namespace biometrics_server.UI
         private void timer1_Tick(object sender, EventArgs e)
         {
             getLogs();
+            LogDataModel.realtimeSyncData(ref lvw_GLogList);
         }
 
         private void dtp_End_ValueChanged(object sender, EventArgs e)
