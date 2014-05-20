@@ -13,7 +13,7 @@ namespace biometrics_server
     {
         //Add biometric data to Database
 
-        public static void syncData(ref ListView lstBiometricData)
+        public static void syncData(ref ListView lstBiometricData, ref ProgressBar progressBar)
         {
             //count
             int count = 0;
@@ -48,6 +48,7 @@ namespace biometrics_server
                         reader.Read();
                         if (!reader.HasRows)
                         {
+                            progressBar.Value = progressBar.Value + 1;
                             insertBiometricsData(id, attendanceDate, type, dateNow);
                             count++;
                         }
@@ -58,8 +59,18 @@ namespace biometrics_server
                 }
 
             }
-
-            MessageBox.Show(count.ToString());
+            if (count == 0)
+            {
+                progressBar.Visible = false;
+                MessageBox.Show("No data to sync at this particular date range.");
+            }
+            else
+            {
+                progressBar.Value = lstBiometricData.Items.Count;
+                MessageBox.Show("Date has been synced.");
+                progressBar.Visible = false;
+            }
+           
 
         }
         //insert biometrics data to database
