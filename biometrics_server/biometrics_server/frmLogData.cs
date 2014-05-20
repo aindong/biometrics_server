@@ -181,5 +181,10 @@ namespace biometrics_server.UI
         {
             getLogs();
         }
+
+        private void dtp_End_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

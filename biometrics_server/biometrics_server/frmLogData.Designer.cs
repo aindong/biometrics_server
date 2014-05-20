@@ -61,6 +61,7 @@
             this.dtp_End.Name = "dtp_End";
             this.dtp_End.Size = new System.Drawing.Size(120, 23);
             this.dtp_End.TabIndex = 20;
+            this.dtp_End.ValueChanged += new System.EventHandler(this.dtp_End_ValueChanged);
             // 
             // dtp_Begin
             // 
@@ -231,7 +232,7 @@
             // 
             // btn_DownloadHistory
             // 
-            this.btn_DownloadHistory.Image = global::biometrics_server.Properties.Resources.Health;
+            this.btn_DownloadHistory.Image = global::biometrics_server.Properties.Resources.Circulation;
             this.btn_DownloadHistory.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_DownloadHistory.Location = new System.Drawing.Point(361, 78);
             this.btn_DownloadHistory.Name = "btn_DownloadHistory";
