@@ -39,6 +39,7 @@ namespace biometrics_server
                         //check if already stored in the database
                         string checkData = "SELECT * FROM attendance WHERE attendance_employee = @id AND attendance_date = @attendanceDate";
                         MySqlCommand cmdData = new MySqlCommand(checkData, con);
+                        //add parameters to command, accessible by using '@'
                         cmdData.Parameters.AddWithValue("id", id);
                         cmdData.Parameters.AddWithValue("attendanceDate", attendanceDate);
                        

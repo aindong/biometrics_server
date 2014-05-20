@@ -53,6 +53,7 @@ namespace biometrics_server.UI
         }
         private void frmLogData_Load(object sender, EventArgs e)
         {
+            comboBox1.Text = "40";
             getLogs();
         }
 

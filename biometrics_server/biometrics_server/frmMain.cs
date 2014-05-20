@@ -81,6 +81,7 @@ namespace biometrics_server
                     MessageBox.Show("Device successfully connected", "System", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnBiometricData.Enabled = true;
                     btnDisconnect.Enabled = true;
+                    btnConnect.Enabled = false;
                 }
                 else
                 {
@@ -105,6 +106,7 @@ namespace biometrics_server
             MessageBox.Show("Device has been disconnected", "System", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             btnBiometricData.Enabled = false;
             btnDisconnect.Enabled = false;
+            btnConnect.Enabled = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
