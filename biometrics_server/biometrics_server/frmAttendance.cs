@@ -62,7 +62,7 @@ namespace biometrics_server
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            AttendanceModel.loadRecordWithFilter(ref lstAttendance, dtpStart.Value.ToString("yyyy-MM-d"), dtpEnd.Value.ToString("yyyy-MM-d"), textBox1.Text);
+            AttendanceModel.loadRecordWithFilter(ref lstAttendance, dtpStart.Value.ToString("yyyy-MM-dd"), dtpEnd.Value.ToString("yyyy-MM-dd"), textBox1.Text);
             
         }
 

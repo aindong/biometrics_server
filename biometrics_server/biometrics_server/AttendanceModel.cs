@@ -133,7 +133,7 @@ namespace biometrics_server
 
                     if(empID == "")
                     {
-                        sql = "SELECT * FROM attendance INNER JOIN user ON user_id = attendance_employee WHERE user_active = 1 AND attendance_date BETWEEN @start AND @end ORDER BY attendance_date ASC";
+                        sql = "SELECT * FROM attendance INNER JOIN user ON user_id = attendance_employee WHERE user_active = 1 AND DATE_FORMAT(attendance_date,'%Y-%m-%d') BETWEEN @start AND @end ORDER BY attendance_date ASC";
                     }
                     else
                     {
