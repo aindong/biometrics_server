@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,6 +45,7 @@
             this.btnViewAttendance = new System.Windows.Forms.Button();
             this.btnDBConfig = new System.Windows.Forms.Button();
             this.btnBiometricData = new System.Windows.Forms.Button();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -209,6 +212,15 @@
             this.btnBiometricData.UseVisualStyleBackColor = true;
             this.btnBiometricData.Click += new System.EventHandler(this.button2_Click);
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyIcon1.BalloonTipText = "<o/> Biometrics Server is resting here";
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "<o/> Biometrics Server";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.DoubleClick += new System.EventHandler(this.notifyIcon1_DoubleClick);
+            // 
             // frmMain
             // 
             this.ClientSize = new System.Drawing.Size(522, 318);
@@ -231,6 +243,7 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmMain_Load);
+            this.Resize += new System.EventHandler(this.frmMain_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -257,6 +270,7 @@
         private System.Windows.Forms.RadioButton rdb_Network;
         private System.Windows.Forms.RadioButton rdb_USB;
         private System.Windows.Forms.Button btnBiometricData;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 
