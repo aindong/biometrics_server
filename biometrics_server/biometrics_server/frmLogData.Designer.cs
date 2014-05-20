@@ -286,6 +286,7 @@
             this.Controls.Add(this.lvw_GLogList);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmLogData";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Biometrics Raw Data";
             this.Load += new System.EventHandler(this.frmLogData_Load);
             this.panel2.ResumeLayout(false);

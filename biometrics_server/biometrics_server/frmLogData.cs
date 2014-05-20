@@ -149,7 +149,6 @@ namespace biometrics_server.UI
                 {
                     List<Record> recordList = (List<Record>)extraData;
                     AddRecordToListView(recordList);
-                    progressBar1.Maximum = lvw_GLogList.Items.Count;
                 }
                 else
                 {
@@ -205,6 +204,7 @@ namespace biometrics_server.UI
         private void button1_Click(object sender, EventArgs e)
         {
             //sync biometrics data to database.
+            progressBar1.Maximum = lvw_GLogList.Items.Count;
             progressBar1.Visible = true;
             LogDataModel.syncData(ref lvw_GLogList, ref progressBar1);
         }
