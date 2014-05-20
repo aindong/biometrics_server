@@ -23,20 +23,16 @@ namespace biometrics_server
                 //get listview data and store it to variable (avoiding long line of codes)
                 string id = lstBiometricData.Items[ctr].SubItems[2].Text;
                 string verifyMode = lstBiometricData.Items[ctr].SubItems[3].Text;
-                //FCPI means failed to log in.
-                if (verifyMode == "FCPI")
-                {
-                    MessageBox.Show("True");
-                    break;
-                }
                 string type = lstBiometricData.Items[ctr].SubItems[4].Text; //action (timeIn, timeOut etc)
                 string attendanceDate = lstBiometricData.Items[ctr].SubItems[5].Text;
                 DateTime dateNow = DateTime.Now;
+
+                //connect to database.
                 try
                 {
                     using (MySqlConnection con = new MySqlConnection(biometrics_server.Config.getConnectionString()))
                     {
-                        //check if data is already stored in the Database
+                        //check if data is already stored in the database
                         con.Open();
                         string checkData = "SELECT * FROM attendance WHERE attendance_employee = @id AND attendance_date = @attendanceDate";
                         MySqlCommand cmdData = new MySqlCommand(checkData, con);
@@ -77,8 +73,6 @@ namespace biometrics_server
                 MessageBox.Show("Data has been synced.", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 progressBar.Visible = false;
             }
-           
-
         }
         //insert biometrics data to database
         public static void insertBiometricsData(String id, String attendanceDate, String type, DateTime dateNow)
