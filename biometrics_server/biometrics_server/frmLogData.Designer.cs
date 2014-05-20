@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dtp_End = new System.Windows.Forms.DateTimePicker();
-            this.dtp_Begin = new System.Windows.Forms.DateTimePicker();
             this.lvw_GLogList = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -51,27 +49,10 @@
             this.btn_DownloadHistory = new System.Windows.Forms.Button();
             this.btn_Clear = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.dtp_Begin = new System.Windows.Forms.DateTimePicker();
+            this.dtp_End = new System.Windows.Forms.DateTimePicker();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dtp_End
-            // 
-            this.dtp_End.CustomFormat = "yyyy-MM-dd";
-            this.dtp_End.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_End.Location = new System.Drawing.Point(220, 78);
-            this.dtp_End.Name = "dtp_End";
-            this.dtp_End.Size = new System.Drawing.Size(120, 23);
-            this.dtp_End.TabIndex = 20;
-            this.dtp_End.ValueChanged += new System.EventHandler(this.dtp_End_ValueChanged);
-            // 
-            // dtp_Begin
-            // 
-            this.dtp_Begin.CustomFormat = "yyyy-MM-dd";
-            this.dtp_Begin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_Begin.Location = new System.Drawing.Point(57, 76);
-            this.dtp_Begin.Name = "dtp_Begin";
-            this.dtp_Begin.Size = new System.Drawing.Size(120, 23);
-            this.dtp_Begin.TabIndex = 21;
             // 
             // lvw_GLogList
             // 
@@ -266,11 +247,31 @@
             this.progressBar1.TabIndex = 30;
             this.progressBar1.Visible = false;
             // 
+            // dtp_Begin
+            // 
+            this.dtp_Begin.CustomFormat = "yyyy-MM-dd";
+            this.dtp_Begin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_Begin.Location = new System.Drawing.Point(55, 78);
+            this.dtp_Begin.Name = "dtp_Begin";
+            this.dtp_Begin.Size = new System.Drawing.Size(120, 23);
+            this.dtp_Begin.TabIndex = 31;
+            // 
+            // dtp_End
+            // 
+            this.dtp_End.CustomFormat = "yyyy-MM-dd";
+            this.dtp_End.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_End.Location = new System.Drawing.Point(220, 78);
+            this.dtp_End.Name = "dtp_End";
+            this.dtp_End.Size = new System.Drawing.Size(120, 23);
+            this.dtp_End.TabIndex = 32;
+            // 
             // frmLogData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(730, 504);
+            this.Controls.Add(this.dtp_End);
+            this.Controls.Add(this.dtp_Begin);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
@@ -280,8 +281,6 @@
             this.Controls.Add(this.chk_NewFlag);
             this.Controls.Add(this.lbl_EndDate);
             this.Controls.Add(this.lbl_BeginDate);
-            this.Controls.Add(this.dtp_End);
-            this.Controls.Add(this.dtp_Begin);
             this.Controls.Add(this.btn_DownloadHistory);
             this.Controls.Add(this.btn_Clear);
             this.Controls.Add(this.lvw_GLogList);
@@ -298,8 +297,6 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dtp_End;
-        private System.Windows.Forms.DateTimePicker dtp_Begin;
         private System.Windows.Forms.Button btn_DownloadHistory;
         private System.Windows.Forms.Button btn_Clear;
         private System.Windows.Forms.ListView lvw_GLogList;
@@ -320,5 +317,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.DateTimePicker dtp_Begin;
+        private System.Windows.Forms.DateTimePicker dtp_End;
     }
 }
